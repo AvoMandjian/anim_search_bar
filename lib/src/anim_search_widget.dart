@@ -29,7 +29,6 @@ class AnimSearchBar extends StatefulWidget {
   final TextStyle? style;
   final bool closeSearchOnSuffixTap;
   final Color? color;
-  final List<TextInputFormatter>? inputFormatters;
 
   const AnimSearchBar({
     Key? key,
@@ -63,9 +62,6 @@ class AnimSearchBar extends StatefulWidget {
 
     /// close the search on suffix tap
     this.closeSearchOnSuffixTap = false,
-
-    /// can add list of inputformatters to control the input
-    this.inputFormatters,
   }) : super(key: key);
 
   @override
@@ -204,7 +200,6 @@ class _AnimSearchBarState extends State<AnimSearchBar>
                   child: TextField(
                     ///Text Controller. you can manipulate the text inside this textField by calling this controller.
                     controller: widget.textController,
-                    inputFormatters: widget.inputFormatters,
                     focusNode: focusNode,
                     cursorRadius: Radius.circular(10.0),
                     cursorWidth: 2.0,
