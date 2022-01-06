@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class AnimSearchBar extends StatefulWidget {
   ///  width - double ,isRequired : Yes
@@ -25,7 +24,7 @@ class AnimSearchBar extends StatefulWidget {
   final onSuffixTap;
   final bool rtl;
   final bool autoFocus;
-  final Function()? onEditingComplete;
+  final Function onEditingComplete;
   final TextStyle? style;
   final bool closeSearchOnSuffixTap;
   final Color? color;
@@ -54,8 +53,7 @@ class AnimSearchBar extends StatefulWidget {
 
     /// make the keyboard to show automatically when the searchbar is expanded
     this.autoFocus = false,
-
-  required  this.onEditingComplete;
+    required this.onEditingComplete,
 
     /// TextStyle of the contents inside the searchbar
     this.style,
